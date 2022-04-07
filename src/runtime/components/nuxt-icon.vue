@@ -3,6 +3,8 @@
 </template>
 
 <script setup>
+import { useNuxtApp } from '#app'
+
 const props = defineProps({
   name: {
     type: String,
