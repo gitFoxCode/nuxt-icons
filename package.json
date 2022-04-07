@@ -1,8 +1,20 @@
 {
   "name": "nuxt-icons",
   "version": "1.0.0",
+  "keywords": [
+    "nuxt",
+    "icons",
+    "vue",
+    "svg"
+  ],
   "license": "MIT",
   "type": "module",
+  "repository": "gitFoxCode/nuxt-icons",
+  "homepage": "https://github.com/gitFoxCode/nuxt-icons",
+  "author": {
+    "name": "FoxCode <https://github.com/gitFoxCode>",
+    "url": "https://github.com/gitFoxCode"
+  },
   "exports": {
     ".": {
       "import": "./dist/module.mjs",
