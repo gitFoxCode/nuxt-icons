@@ -4,6 +4,7 @@
 
 <script setup>
 import { useNuxtApp } from '#app'
+import { ref } from 'vue'
 
 const props = defineProps({
   name: {
@@ -19,7 +20,7 @@ const props = defineProps({
 const nuxtApp = useNuxtApp()
 const icons = ref(nuxtApp.$icons)
 
-if(!icons.value.get(props.name)){
+if (!icons.value.get(props.name)) {
   console.error(`[nuxt-icons] Icon '${props.name}' doesn't exist in 'assets/icons'`)
 }
 </script>
