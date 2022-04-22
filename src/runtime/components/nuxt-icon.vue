@@ -1,10 +1,10 @@
 <template>
-  <span class="nuxt-icon" :class="{ 'nuxt-icon--fill': !fill }" v-html="icons.get(name)" />
+  <span class="nuxt-icon" :class="{ 'nuxt-icon--fill': !fill }" v-html="icons[name]" />
 </template>
 
 <script setup>
-import { useNuxtApp } from '#app'
 import { ref } from 'vue'
+import { NuxtIcons } from '#imports'
 
 const props = defineProps({
   name: {
@@ -17,10 +17,10 @@ const props = defineProps({
     required: false
   }
 })
-const nuxtApp = useNuxtApp()
-const icons = ref(nuxtApp.$icons)
 
-if (!icons.value.get(props.name)) {
+const icons = ref(NuxtIcons ?? {})
+
+if (!icons.value?.[props.name]) {
   console.error(`[nuxt-icons] Icon '${props.name}' doesn't exist in 'assets/icons'`)
 }
 </script>
