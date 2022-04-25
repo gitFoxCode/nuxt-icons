@@ -24,9 +24,29 @@ export default defineNuxtConfig({
 If you need to use the original color from the svg file (for example, if your icon has defs) you need to use the **fill** attribute: <br>
 `<nuxt-icon name="mySuperIcon" fill />`
 
+### Subfolders
+If you would like to use some more complicated folder arrangement you will have to use naming similar to what you may know from nuxt when creating subfolders in components. 
 
+If you have a svg icon in nested directories such as:
+```
+📁icons
+  └📁admin
+  ⠀⠀└ badge.svg
+  └📁user
+  ⠀⠀└ badge.svg
+```
+then the icons's name will be based on its own path directory and filename. Therefore, the icon's name will be:
+```html
+<nuxt-icon name="AdminBadge"> and <nuxt-icon name="UserBadge>
+```
 ## What this module does
 The module retrieves all svg files from the assets/icons folder, removes the height and width from them to make them scalable, and using the `<nuxt-icon>` component allows them to be used. `<nuxt-icon>` injects the SVG code directly into `<span>`. 
+
+## Features
+- Easy SVG icon management ✅
+- HMR (You don't have to reset the project to reload the icons) ✅
+- Ability to manipulate icons just like fonts, e.g. using `color`, `font-size` instead of `fill`,`width`,`height` ✅
+- Ability to use the original color scheme for complex icons using the `fill` attribute ✅
 
 ## Development
 
@@ -41,3 +61,5 @@ The module retrieves all svg files from the assets/icons folder, removes the hei
 - Automatic icon scaling that have non-square dimensions to maintain their proportions (maybe with preserveAspectRatio)
 - Usable for previous nuxt versions
 - Loading icons into symbol svg sprite *(rather worsens performance)*
+
+A big thank you to [@Diizzayy](https://github.com/Diizzayy) for his invaluable help in developing the project 
