@@ -37,7 +37,7 @@ If you have a svg icon in nested directories such as:
 ```
 then the icons's name will be based on its own path directory and filename. Therefore, the icon's name will be:
 ```html
-<nuxt-icon name="AdminBadge"> and <nuxt-icon name="UserBadge>
+<nuxt-icon name="AdminBadge"> and <nuxt-icon name="UserBadge">
 ```
 ## What this module does
 The module retrieves all svg files from the assets/icons folder, removes the height and width from them to make them scalable, and using the `<nuxt-icon>` component allows them to be used. `<nuxt-icon>` injects the SVG code directly into `<span>`. 
