@@ -1,6 +1,10 @@
 import { promises as fsp } from 'fs'
 import { defineNuxtModule, createResolver, resolveFiles, addComponentsDir, addTemplate } from '@nuxt/kit'
 
+export interface ModuleOptions {
+  addPlugin: boolean
+}
+
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: 'nuxt-icons',
