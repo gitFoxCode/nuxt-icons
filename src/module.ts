@@ -1,5 +1,5 @@
 import { promises as fsp } from 'fs'
-import { defineNuxtModule, createResolver, resolveFiles, addComponentsDir, addTemplate, resolvePath } from '@nuxt/kit'
+import { defineNuxtModule, createResolver, resolveFiles, addComponentsDir, addTemplate } from '@nuxt/kit'
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
@@ -23,8 +23,7 @@ export default defineNuxtModule<ModuleOptions>({
       write: true,
       filename: 'nuxticons.mjs',
       getContents: () => [
-          `export const NuxtIcons = ${JSON.stringify(Object.fromEntries(ctx.icons))}`,
-          'export const NuxtIconsKeys = JSON.stringify(Object.keys(NuxtIcons))'
+          `export const NuxtIcons = ${JSON.stringify(Object.fromEntries(ctx.icons))}`
       ].join('\n')
     })
 
@@ -32,9 +31,6 @@ export default defineNuxtModule<ModuleOptions>({
       autoImports.push(
         {
           name: 'NuxtIcons',
-          from: '#build/nuxticons'
-        }, { // For dev purposes only:
-          name: 'NuxtIconsKeys',
           from: '#build/nuxticons'
         })
     })
@@ -56,7 +52,6 @@ export default defineNuxtModule<ModuleOptions>({
           iconsDirs = iconsDirs.map(name => name.charAt(0).toUpperCase() + name.slice(1))
         }
         const name = iconsDirs.join('').slice(0, -4)
-        // const name = entry.split('/').pop().replace(/\.([\s\S]*)$/, '')
         const svg = icon.replace(/width="(\d+\.?\d*)"/gmi, '').replace(/height="(\d+\.?\d*)"/gmi, '')
 
         ctx.icons.set(name, svg)
