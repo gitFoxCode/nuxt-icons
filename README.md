@@ -8,7 +8,7 @@ A module for nuxt3 that allows you to use your own SVG icons quickly and enjoyab
 1. `npm i nuxt-icons`
 2. add `nuxt-icons` to modules, **nuxt.config.ts**:
 ```javascript
-import { defineNuxtConfig } from 'nuxt3'
+import { defineNuxtConfig } from 'nuxt'
 export default defineNuxtConfig({
     modules: [
         'nuxt-icons'
