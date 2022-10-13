@@ -1,5 +1,5 @@
 import { promises as fsp } from 'fs'
-import { defineNuxtModule, createResolver, resolveFiles, addComponentsDir, addTemplate } from '@nuxt/kit'
+import { defineNuxtModule, createResolver, resolveFiles, addComponentsDir, addImports, addTemplate } from '@nuxt/kit'
 
 export interface ModuleOptions {
   ///
@@ -31,12 +31,9 @@ export default defineNuxtModule<ModuleOptions>({
       ].join('\n')
     })
 
-    nuxt.hook('autoImports:extend', (autoImports) => {
-      autoImports.push(
-        {
-          name: 'NuxtIcons',
-          from: '#build/nuxticons'
-        })
+   addImports({
+      name: "NuxtIcons",
+      from: "#build/nuxticons"
     })
 
     async function scanIcons () {
