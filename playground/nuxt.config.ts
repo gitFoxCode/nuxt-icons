@@ -1,9 +1,9 @@
 import { defineNuxtConfig } from 'nuxt3'
-import NuxtICons from '..'
+import NuxtIcons from '..'
 
 export default defineNuxtConfig({
   modules: [
-    NuxtICons
+    NuxtIcons
   ],
   NuxtICons: {
     addPlugin: true

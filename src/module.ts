@@ -1,5 +1,5 @@
 import { promises as fsp } from 'fs'
-import { defineNuxtModule, createResolver, resolveFiles, addComponentsDir, addAutoImport, addTemplate } from '@nuxt/kit'
+import { defineNuxtModule, createResolver, resolveFiles, addComponentsDir, addImports, addTemplate } from '@nuxt/kit'
 
 export interface ModuleOptions {
   ///
@@ -10,7 +10,7 @@ export default defineNuxtModule<ModuleOptions>({
     name: 'nuxt-icons',
     configKey: 'NuxtIcons',
     compatibility: {
-      nuxt: '^3.0.0-rc.3'
+      nuxt: '^3.0.0-rc.14'
     }
   },
   async setup (options, nuxt) {
@@ -31,7 +31,7 @@ export default defineNuxtModule<ModuleOptions>({
       ].join('\n')
     })
 
-    addAutoImport({
+    addImports({
       name: "NuxtIcons",
       from: "#build/nuxticons"
     })
