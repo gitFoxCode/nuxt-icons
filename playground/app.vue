@@ -5,8 +5,8 @@
       <li class="colored">
         Icon with color from text: <nuxt-icon name="fire" />
       </li>
-      <li>Icon with defs: <nuxt-icon name="css3" fill /> <nuxt-icon name="javascript" fill /></li>
-      <li>Subfolder icons: <nuxt-icon name="UserBadge" /> User, <nuxt-icon name="AdminBadge" /> Admin, <nuxt-icon name="AdminFormBug" /></li>
+      <li>Icon with defs: <nuxt-icon name="css3" filled /> <nuxt-icon name="javascript" filled /></li>
+      <li>Subfolder icons: <nuxt-icon name="user/badge" /> User, <nuxt-icon name="admin/badge" /> Admin, <nuxt-icon name="admin/form/bug" /></li>
     </ul>
   </div>
 </template>

@@ -1,38 +1,37 @@
 <template>
-  <span class="nuxt-icon" :class="{ 'nuxt-icon--fill': !fill }" v-html="icons[name]" />
+     <span class="nuxt-icon" :class="{ 'nuxt-icon--fill': !filled }" v-html="rawIcon" />
 </template>
 
-<script setup>
-import { ref } from 'vue'
-import { NuxtIcons } from '#imports'
+<script setup lang="ts">
+import { ref } from '#imports'
 
 const props = defineProps({
-  name: {
-    type: String,
-    required: true
-  },
-  fill: {
-    type: Boolean,
-    default: false,
-    required: false
-  }
+    name: String,
+    filled: {
+        type: Boolean,
+        default: false,
+        required: false
+    }
 })
+const icon = ref('')
 
-const icons = ref(NuxtIcons ?? {})
+const iconsImport = import.meta.glob(`assets/icons/**/**.svg`, {as: 'raw', eager: false})
+const rawIcon = await iconsImport[`/assets/icons/${props.name}.svg`]()
+icon.value = rawIcon
 
-if (!icons.value?.[props.name]) {
+if (!rawIcon) {
   console.error(`[nuxt-icons] Icon '${props.name}' doesn't exist in 'assets/icons'`)
 }
 </script>
 
 <style>
 .nuxt-icon svg{
-  width: 1em;
-  height: 1em;
-  margin-bottom: 0.125em;
-  vertical-align: middle;
+    width: 1em;
+    height: 1em;
+    margin-bottom: 0.125em;
+    vertical-align: middle;
 }
 .nuxt-icon.nuxt-icon--fill, .nuxt-icon.nuxt-icon--fill * {
-  fill: currentColor !important;
+    fill: currentColor !important;
 }
 </style>
