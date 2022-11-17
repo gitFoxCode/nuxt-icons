@@ -15,13 +15,14 @@ const props = defineProps({
 })
 const icon = ref('')
 
-const iconsImport = import.meta.glob('assets/icons/**/**.svg', { as: 'raw', eager: false })
-const rawIcon = await iconsImport[`/assets/icons/${props.name}.svg`]()
-icon.value = rawIcon
-
-if (!rawIcon) {
+try {
+  const iconsImport = import.meta.glob('assets/icons/**/**.svg', { as: 'raw', eager: false })
+  const rawIcon = await iconsImport[`/assets/icons/${props.name}.svg`]()
+  icon.value = rawIcon
+} catch {
   console.error(`[nuxt-icons] Icon '${props.name}' doesn't exist in 'assets/icons'`)
 }
+
 </script>
 
 <style>
