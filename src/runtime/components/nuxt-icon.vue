@@ -1,21 +1,21 @@
 <template>
-     <span class="nuxt-icon" :class="{ 'nuxt-icon--fill': !filled }" v-html="rawIcon" />
+  <span class="nuxt-icon" :class="{ 'nuxt-icon--fill': !filled }" v-html="rawIcon" />
 </template>
 
 <script setup lang="ts">
 import { ref } from '#imports'
 
 const props = defineProps({
-    name: String,
-    filled: {
-        type: Boolean,
-        default: false,
-        required: false
-    }
+  name: String,
+  filled: {
+    type: Boolean,
+    default: false,
+    required: false
+  }
 })
 const icon = ref('')
 
-const iconsImport = import.meta.glob(`assets/icons/**/**.svg`, {as: 'raw', eager: false})
+const iconsImport = import.meta.glob('assets/icons/**/**.svg', { as: 'raw', eager: false })
 const rawIcon = await iconsImport[`/assets/icons/${props.name}.svg`]()
 icon.value = rawIcon
 
