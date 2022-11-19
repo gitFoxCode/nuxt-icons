@@ -1,5 +1,5 @@
 <template>
-  <span class="nuxt-icon" :class="{ 'nuxt-icon--fill': !filled }" v-html="rawIcon" />
+  <span class="nuxt-icon" :class="{ 'nuxt-icon--fill': !filled }" v-html="icon" />
 </template>
 
 <script setup lang="ts">
