@@ -9,14 +9,11 @@
 <script setup lang="ts">
 import { ref, watchEffect } from '#imports'
 
-const props = defineProps({
-  name: String,
-  filled: {
-    type: Boolean,
-    default: false,
-    required: false
-  }
-})
+const props = withDefaults(defineProps<{
+  name: string;
+  filled?: boolean
+}>(), { filled: false })
+
 const icon = ref('')
 
 watchEffect(async () => {
