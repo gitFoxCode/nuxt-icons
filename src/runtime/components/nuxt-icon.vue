@@ -14,7 +14,8 @@ const props = withDefaults(defineProps<{
   filled?: boolean
 }>(), { filled: false })
 
-const icon = ref('')
+
+const icon = ref<string | Record<string, any>>('')
 let hasStroke = false
 
 async function getIcon () {
