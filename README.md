@@ -36,6 +36,23 @@ then the icons's name will be based on its own path directory and filename. Ther
 ```html
 <nuxt-icon name="admin/badge"> and <nuxt-icon name="user/badge">
 ```
+## I don't like the basic styles that are assigned to the icons!
+The styles that have been created for the icons look as follows: 
+```css
+width: 1em;
+height: 1em;
+margin-bottom: 0.125em;
+vertical-align: middle;
+```
+You can easily change these styles using regular CSS for example in your index.vue file:
+```vue
+<style>
+.nuxt-icon svg{
+  margin-bottom: 0;
+}
+</style>
+```
+
 ## What this module does
 The module retrieves all svg files from the assets/icons folder, overwrites the height and width from them to make them scalable, and using the `<nuxt-icon>` component allows them to be used. `<nuxt-icon>` injects the SVG code directly into `<span>`. 
 
@@ -57,5 +74,6 @@ The module retrieves all svg files from the assets/icons folder, overwrites the 
 - Automatic svg file optimization 
 - Automatic icon scaling that have non-square dimensions to maintain their proportions (maybe with preserveAspectRatio)
 - <del>Usable for previous nuxt versions</del> (just use [something like this](https://github.com/gitFoxCode/TaleGalaxy/blob/main/client/src/components/SvgIcon.vue))
+- If a lot of the same icons are used on the page create a separate svg sprite (significant improvement in performance)
 
 A big thank you to [@Diizzayy](https://github.com/Diizzayy) for his invaluable help in developing the project 
