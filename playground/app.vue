@@ -21,6 +21,12 @@
           Update
         </button>
       </li>
+      <li class="colored">
+        Inline icon (stroke) with color from text: <nuxt-icon name="foxcode-logo" />
+      </li>
+      <li class="colored">
+        Icon with default fill: <nuxt-icon name="foxcode-logo" filled />
+      </li>
     </ul>
   </div>
 </template>
