@@ -74,5 +74,6 @@ The module retrieves all svg files from the assets/icons folder, overwrites the 
 - Automatic svg file optimization 
 - Automatic icon scaling that have non-square dimensions to maintain their proportions (maybe with preserveAspectRatio)
 - <del>Usable for previous nuxt versions</del> (just use [something like this](https://github.com/gitFoxCode/TaleGalaxy/blob/main/client/src/components/SvgIcon.vue))
+- If a lot of the same icons are used on the page create a separate svg sprite (significant improvement in performance)
 
 A big thank you to [@Diizzayy](https://github.com/Diizzayy) for his invaluable help in developing the project 
