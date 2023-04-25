@@ -28,7 +28,7 @@ async function getIcon () {
     if (rawIcon.includes('stroke')) { hasStroke = true }
     icon.value = rawIcon
   } catch {
-    console.error(
+    throw new Error(
       `[nuxt-icons] Icon '${props.name}' doesn't exist in 'assets/icons'`
     )
   }
