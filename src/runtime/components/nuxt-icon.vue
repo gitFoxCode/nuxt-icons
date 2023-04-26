@@ -7,10 +7,11 @@
 </template>
 
 <script setup lang="ts">
+import { NuxtIconName } from '#app'
 import { ref, watchEffect } from '#imports'
 
 const props = withDefaults(defineProps<{
-  name: string;
+  name: NuxtIconName;
   filled?: boolean
 }>(), { filled: false })
 

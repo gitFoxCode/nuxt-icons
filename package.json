@@ -34,7 +34,9 @@
     "lint": "nuxi typecheck && eslint ."
   },
   "dependencies": {
-    "@nuxt/kit": "^3.0.0"
+    "@nuxt/kit": "^3.0.0",
+    "glob": "^10.2.2",
+    "mkdirp": "^3.0.1"
   },
   "devDependencies": {
     "@nuxt/module-builder": "^0.2.1",
