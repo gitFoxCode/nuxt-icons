@@ -52,6 +52,8 @@ You can easily change these styles using regular CSS for example in your index.v
 }
 </style>
 ```
+## I would like to use icons from an icon pack available online 
+You can download icons in SVG format and put them in the `/icons` folder, or use another module that supports this natively:  [nuxt-icon](https://github.com/nuxt-modules/icon)
 
 ## What this module does
 The module retrieves all svg files from the assets/icons folder, overwrites the height and width from them to make them scalable, and using the `<nuxt-icon>` component allows them to be used. `<nuxt-icon>` injects the SVG code directly into `<span>`. 
