@@ -5,7 +5,7 @@ A module for Nuxt 3 that allows you to use your own SVG icons quickly and enjoya
 [![playground-usage](https://i.imgur.com/SMXXpVu.png "example of using icons in project")](https://github.com/gitFoxCode/nuxt-icons)
 
 ## Installation 
-1. `npm i nuxt-icons`
+1. `npm i -D nuxt-icons`
 2. add `nuxt-icons` to modules, **nuxt.config.ts**:
 ```javascript
 export default defineNuxtConfig({
