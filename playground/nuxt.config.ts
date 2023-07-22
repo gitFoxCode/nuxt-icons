@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   modules: [
     NuxtIcons
   ],
-  NuxtIcons: {
+  nuxtIcons: {
     addPlugin: true
   }
 })
