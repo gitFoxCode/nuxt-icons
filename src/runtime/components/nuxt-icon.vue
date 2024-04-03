@@ -21,8 +21,9 @@ let hasStroke = false
 async function getIcon () {
   try {
     const iconsImport = import.meta.glob('assets/icons/**/**.svg', {
-      as: 'raw',
-      eager: false
+      eager: false,
+      query: '?raw',
+      import: 'default'
     })
     const rawIcon = await iconsImport[`/assets/icons/${props.name}.svg`]()
     if (rawIcon.includes('stroke')) { hasStroke = true }
