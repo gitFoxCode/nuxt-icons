@@ -30,7 +30,8 @@
     "prepack": "nuxt-module-build",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
-    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "lint": "nuxi typecheck && eslint ."
   },
   "dependencies": {
     "@nuxt/kit": "^3.0.0"
