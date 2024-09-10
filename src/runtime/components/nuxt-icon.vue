@@ -7,10 +7,11 @@
 </template>
 
 <script setup lang="ts">
+import { NuxtIconName } from '#app'
 import { ref, watchEffect } from '#imports'
 
 const props = withDefaults(defineProps<{
-  name: string;
+  name: NuxtIconName;
   filled?: boolean
 }>(), { filled: false })
 
@@ -25,11 +26,11 @@ async function getIcon () {
       query: '?raw',
       import: 'default'
     })
-    const rawIcon = await iconsImport[`/assets/icons/${props.name}.svg`]()
-    if (rawIcon.includes('stroke')) { hasStroke = true }
-    icon.value = rawIcon
+    const rawIcon = await iconsImport[`/assets/icons/${props.name}.svg`]?.()
+    if (rawIcon?.includes('stroke')) { hasStroke = true }
+    icon.value = rawIcon || ''
   } catch {
-    console.error(
+    throw new Error(
       `[nuxt-icons] Icon '${props.name}' doesn't exist in 'assets/icons'`
     )
   }
