@@ -31,7 +31,7 @@ async function getIcon () {
       )
       return
     }
-    const rawIcon = rawIconImport()
+    const rawIcon = await rawIconImport()
     if (rawIcon.includes('stroke')) { hasStroke = true }
     icon.value = rawIcon
   } catch {
