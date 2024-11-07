@@ -24,7 +24,7 @@ async function getIcon () {
       as: 'raw',
       eager: false
     })
-    const rawIconImport = await iconsImport[`/assets/icons/${props.name}.svg`]
+    const rawIconImport = iconsImport[`/assets/icons/${props.name}.svg`]
     if (!rawIconImport) {
       console.error(
         `[nuxt-icons] Icon '${props.name}' doesn't exist in 'assets/icons'`
