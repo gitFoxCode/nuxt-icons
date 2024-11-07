@@ -25,7 +25,14 @@ async function getIcon () {
       query: '?raw',
       import: 'default'
     })
-    const rawIcon = await iconsImport[`/assets/icons/${props.name}.svg`]()
+    const rawIconImport = iconsImport[`/assets/icons/${props.name}.svg`]
+    if (!rawIconImport) {
+      console.error(
+        `[nuxt-icons] Icon '${props.name}' doesn't exist in 'assets/icons'`
+      )
+      return
+    }
+    const rawIcon = await rawIconImport()
     if (rawIcon.includes('stroke')) { hasStroke = true }
     icon.value = rawIcon
   } catch {
