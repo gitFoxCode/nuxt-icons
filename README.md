@@ -1,6 +1,6 @@
 [![nuxt-icons](https://i.imgur.com/67g6UGS.png "nuxt-icons banner")](https://github.com/gitFoxCode/nuxt-icons)
 # Nuxt Icons
-A module for Nuxt 3 that allows you to use your own SVG icons quickly and enjoyably. 
+A module for Nuxt 4 that allows you to use your own SVG icons quickly and enjoyably. 
 
 [![playground-usage](https://i.imgur.com/SMXXpVu.png "example of using icons in project")](https://github.com/gitFoxCode/nuxt-icons)
 

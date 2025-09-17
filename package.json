@@ -1,45 +1,51 @@
 {
   "name": "nuxt-icons",
-  "version": "3.2.2",
+  "version": "4.0.0",
+  "description": "A Nuxt 4 module for easy SVG icons",
   "keywords": [
     "nuxt",
+    "nuxt4",
     "icons",
     "vue",
     "svg"
   ],
   "license": "MIT",
   "type": "module",
-  "repository": "gitFoxCode/nuxt-icons",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gitFoxCode/nuxt-icons.git"
+  },
   "homepage": "https://github.com/gitFoxCode/nuxt-icons",
   "author": {
-    "name": "FoxCode <https://github.com/gitFoxCode>",
+    "name": "FoxCode",
     "url": "https://github.com/gitFoxCode"
   },
+  "main": "./dist/module.mjs",
+  "types": "./dist/module.d.mts",
   "exports": {
     ".": {
       "import": "./dist/module.mjs",
-      "require": "./dist/module.cjs"
+      "types": "./dist/module.d.mts"
     }
   },
-  "main": "./dist/module.cjs",
-  "types": "./dist/types.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
     "prepack": "nuxt-module-build",
     "dev": "nuxi dev playground",
-    "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
   },
-  "dependencies": {
-    "@nuxt/kit": "^3.0.0"
+  "peerDependencies": {
+    "nuxt": "^4.0.0"
   },
   "devDependencies": {
-    "@nuxt/module-builder": "^0.2.1",
-    "@nuxt/schema": "^3.0.0",
-    "@nuxtjs/eslint-config-typescript": "^12.0.0",
-    "eslint": "^8.27.0",
-    "nuxt": "^3.0.0"
+    "@nuxt/module-builder": "^1.0.2",
+    "@nuxt/kit": "^4.0.3",
+    "@nuxt/schema": "^4.0.0",
+    "nuxt": "^4.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
